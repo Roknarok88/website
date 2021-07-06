@@ -78,3 +78,11 @@ const generateUsers = function (array) {
 };
 
 generateUsers(usersDatabase);
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
