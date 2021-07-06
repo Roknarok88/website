@@ -1,0 +1,198 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css);
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Titillium WebLight"), local("TitilliumWeb-Light"),
+    url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff)
+      format("woff");
+}
+
+:root {
+  --primary-color-blue: #00193b;
+  --primary-color-gold: #a88952;
+
+  --secondary-color-gold: #ddb570;
+  --teriary-color-gold: #7a643e;
+}
+body {
+  font-family: "Titillium Web";
+  min-height: 100%;
+}
+
+.container {
+  width: 50%;
+}
+
+ul.breadcrumb {
+  list-style: none;
+  margin-left: 70px;
+  margin-top: 0px;
+  border: 2px solid var(--primary-color-gold);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-bottom: 20px;
+  background-color: var(--primary-color-gold);
+  border: 5px solid var(--primary-color-gold);
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 40px;
+  text-decoration: 0;
+  color: white;
+}
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: var(--primary-color-blue);
+  content: ">>";
+}
+ul.breadcrumb li a {
+  color: var(--primary-color-blue);
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+body,
+div,
+form,
+input,
+select,
+p {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-size: 14px;
+  color: #666;
+}
+h1 {
+  margin: 0;
+  font-weight: 400;
+}
+h3 {
+  margin: 12px 0;
+  padding-bottom: 2px;
+  color: var(--primary-color-gold);
+}
+.main-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  margin-left: 70px;
+  margin-top: -20px;
+
+  border: 2px solid var(--primary-color-gold);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+form {
+  width: 100%;
+  padding: 20px;
+}
+fieldset {
+  border: none;
+  border-top: 1px solid var(--primary-color-gold);
+}
+.account-details,
+.personal-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.account-details > div,
+.personal-details > div > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.account-details > div,
+.personal-details > div,
+input,
+label {
+  width: 100%;
+}
+label {
+  padding: 0 5px;
+  text-align: right;
+  vertical-align: middle;
+}
+input {
+  padding: 5px;
+  vertical-align: middle;
+}
+.checkbox {
+  margin-bottom: 10px;
+}
+select,
+.children,
+.gender,
+.bdate-block {
+  width: calc(100% + 26px);
+  padding: 5px 0;
+}
+select {
+  background: transparent;
+}
+.gender input {
+  width: auto;
+}
+.gender label {
+  padding: 0 5px 0 0;
+}
+.bdate-block {
+  display: flex;
+  justify-content: space-between;
+}
+.birthdate select.day {
+  width: 35px;
+}
+.birthdate select.mounth {
+  width: calc(100% - 94px);
+}
+.birthdate input {
+  width: 38px;
+  vertical-align: unset;
+}
+
+button {
+  width: 100%;
+  padding: 10px 0;
+  margin: 10px auto;
+  border-radius: 5px;
+  border: none;
+  background: var(--primary-color-gold);
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Titillium Web";
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+button:hover {
+  background: var(--primary-color-gold);
+}
+@media (min-width: 568px) {
+  .account-details > div,
+  .personal-details > div {
+    width: 50%;
+  }
+  label {
+    width: 40%;
+  }
+  input {
+    width: 60%;
+  }
+  select,
+  .children,
+  .gender,
+  .bdate-block {
+    width: calc(60% + 16px);
+  }
+}

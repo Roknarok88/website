@@ -237,10 +237,15 @@ table td {
   width: 100px;
   transition: all 0.5s;
   cursor: pointer;
+  text-decoration: 0;
 
   font-family: "Titillium Web";
   font-weight: bolder;
   letter-spacing: 1px;
+}
+
+.btn.search a {
+  color: inherit;
 }
 
 .btn.search span {
