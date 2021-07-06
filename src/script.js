@@ -78,5 +78,3 @@ const generateUsers = function (array) {
 };
 
 generateUsers(usersDatabase);
-
-//test test
