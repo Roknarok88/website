@@ -60,7 +60,7 @@ container1.insertAdjacentHTML(
 const generateUsers = function (array) {
   let str = array
     .map((v) => {
-      return `<tr>
+      return `<tr key="${v.id}">
        <td>${Number(v.id)}</td>
        <td>${v.username}</td>
        <td>${v.name}</td>
@@ -68,21 +68,66 @@ const generateUsers = function (array) {
        <td>${v.role}</td>
        <td>${v.departament}</td>
        <td>${v.branch}</td>
-    <tr/>`;
+       <td class="rowtest">
+       <div class="dropdown fa fa-ellipsis-v">
+       <div  class="dropdown-content">
+         <a href="#">Edit</a>
+         <a href="#">Deactivate</a>
+         <a href="#">Delete</a>
+       </div>
+     </div>
+
+
+       </td>
+          <tr/>`;
     })
     .join();
-
-  console.log(str);
 
   tableUsers.insertAdjacentHTML("beforeend", str.replaceAll(",", ""));
 };
 
 generateUsers(usersDatabase);
 
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+// function myFunction() {
+//   document.getElementById("myDropdown").classList.toggle("show");
+// }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+const tab = document.querySelectorAll(".rowtest");
+
+tab.forEach((v, i) => {
+  v.addEventListener("click", function (e) {
+    e.target.querySelector(".dropdown-content").classList.toggle("show1");
+
+    if (e.target.matches(".dropdown-content")) {
+      document.querySelector(".dropdown-content").classList.toggle("show1");
+    }
+  });
+});
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".rowtest")) {
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+window.addEventListener("click", function (e) {
+  let box = document.querySelector(".rowtest");
+  let box3 = document.querySelector(".dropdown");
+
+  if (String(e.target) != String(box) && String(e.target) != String(box3)) {
+    let box2 = document.querySelectorAll(".dropdown-content");
+    box2.forEach((v) => {
+      v.classList.remove("show1");
+    });
+  }
+});
