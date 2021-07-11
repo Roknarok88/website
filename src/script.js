@@ -1,5 +1,5 @@
 const bossText = "Narcis Stan";
-const container1 = document.querySelector(".components");
+const container1 = document.querySelector(".message");
 const tableUsers = document.querySelector(".tableusers");
 
 const usersDatabase = [
@@ -45,9 +45,7 @@ messageOfTheDay =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
 const generateMessage = function (publisher, markup) {
-  return `<h2>Message of the day</h2>
- 
- <p>${markup}</p> 
+  return `<p>${markup}</p> 
  
  <b>Posted by: </b><h3> ${publisher}</h3>`;
 };
@@ -131,3 +129,12 @@ window.addEventListener("click", function (e) {
     });
   }
 });
+
+function showComponent(id) {
+  document
+    .querySelectorAll(".components")
+    .forEach((v) => v.classList.add("hidden"));
+
+  console.log(document.getElementById(`${id}1`));
+  document.getElementById(`${id}1`).classList.remove("hidden");
+}

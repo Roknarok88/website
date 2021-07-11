@@ -2,9 +2,26 @@
 
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
+@font-face {
+  font-family: "Titillium Web";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Titillium WebLight"), local("TitilliumWeb-Light"),
+    url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff)
+      format("woff");
+}
+
+body {
+  font-family: "Titillium Web";
+}
+
 :root {
   --primary-color-blue: #00193b;
   --primary-color-gold: #a88952;
+  --primary-text-color: rgb(216, 210, 210);
+
+  --secondary-color-gold: #ddb570;
+  --teriary-color-gold: #7a643e;
 }
 
 area {
@@ -37,7 +54,7 @@ nav.main-menu.expanded {
 .main-menu {
   background: var(--primary-color-blue);
   border-right: 2px solid var(--primary-color-gold);
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -155,7 +172,7 @@ nav.main-menu li.active > a,
   margin-bottom: 20px;
 }
 
-.components h1 {
+.components > h1 {
   font-family: "Titillium Web";
   background-color: var(--primary-color-gold);
   border: 5px solid var(--primary-color-gold);
@@ -164,6 +181,41 @@ nav.main-menu li.active > a,
   margin-left: 0px;
   margin-top: 0px;
   padding-left: 20px;
+}
+
+.menuborder {
+  width: auto;
+  height: 20px;
+}
+
+.message {
+  margin-left: 70px;
+  border: 2px solid var(--primary-color-gold);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.message > h1 {
+  font-family: "Titillium Web";
+  background-color: var(--primary-color-gold);
+  border: 5px solid var(--primary-color-gold);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-left: 0px;
+  margin-top: 0px;
+  padding-left: 20px;
+}
+
+.message p,
+b,
+h3,
+h2 {
+  margin-top: -10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: "Titillium Web";
 }
 
 .components p,
@@ -232,16 +284,15 @@ table td {
   border: none;
   color: #ffffff;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   padding: 3px;
   width: 100px;
   transition: all 0.5s;
   cursor: pointer;
   text-decoration: 0;
-
   font-family: "Titillium Web";
-  font-weight: bolder;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  border-radius: 10px;
 }
 
 .btn.search a {
@@ -332,25 +383,6 @@ table td {
   overflow: hidden;
 }
 
-/* When the inputs get focus, do something */
-.form-container input[type="text"]:focus,
-.form-container input[type="password"]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #04aa6d;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom: 10px;
-  opacity: 0.8;
-}
-
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
@@ -360,15 +392,6 @@ table td {
 .form-container .btn:hover,
 .open-button:hover {
   opacity: 1;
-}
-
-@font-face {
-  font-family: "Titillium Web";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Titillium WebLight"), local("TitilliumWeb-Light"),
-    url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff)
-      format("woff");
 }
 
 /* Dropdown button on hover & focus */
@@ -426,4 +449,153 @@ table td {
 
 .fa-ellipsis-v:hover {
   color: var(--primary-color-gold);
+}
+
+.hidden {
+  display: none;
+}
+
+.card h1,
+p,
+button {
+  font-family: "Titillium Web";
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  display: inline-block;
+  margin: 25px;
+  height: auto;
+  transition: all 0.5s;
+}
+
+.card .price {
+  color: grey;
+  font-size: 22px;
+  margin: 0px;
+  z-index: -1;
+}
+
+.description {
+  width: 90%;
+  z-index: -1;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: var(--primary-color-gold);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.card button:hover {
+  background-color: var(--secondary-color-gold);
+  color: var(--primary-color-blue);
+  z-index: -1;
+}
+
+.card img {
+  margin-top: 20px;
+  max-width: 230px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+.topnav {
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  background-color: var(--primary-color-blue);
+  margin-bottom: 20px;
+  margin-top: -32px;
+  border-bottom: 2px solid var(--primary-color-gold);
+}
+
+.topnav a {
+  float: right;
+  display: block;
+  color: var(--primary-text-color);
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 17px;
+  height: inherit;
+}
+
+.topnav a:hover {
+  color: var(--primary-color-gold);
+}
+
+.topnav a.active {
+  background-color: #2196f3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav .search-container input:focus {
+  outline: 0;
+}
+.topnav input {
+  height: 31px;
+  margin-top: 8px;
+}
+
+.topnav input[type="text"] {
+  padding: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 2px 4px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: var(--primary-color-gold);
+
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: var(--secondary-color-gold);
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a,
+  .topnav input[type="text"],
+  .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type="text"] {
+    border: 1px solid #ccc;
+  }
 }
